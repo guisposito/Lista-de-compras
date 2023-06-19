@@ -76,10 +76,17 @@ function mostrarItem(){
         i.addEventListener('click', (evento) => {
             const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value');
             console.log(listaDeItens[valorDoElemento].checar = evento.target.checked)
-
             mostrarItem();
-            //Mantem o foco no campo do input
-            itensInput.focus();
+            
+        })
+    })
+
+    const deletarObjetos = document.querySelectorAll(".deletar")
+    deletarObjetos.forEach( i => {
+        i.addEventListener('click', (evento) => {
+            const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value');
+            listaDeItens.splice(valorDoElemento, 1);
+            mostrarItem();
         })
     })
 }
