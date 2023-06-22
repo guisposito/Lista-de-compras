@@ -10,6 +10,11 @@ const ulItens = document.getElementById('lista-de-itens');
 const ulItensComprados = document.getElementById('itens-comprados');
 
 
+function atualizaLocalStorage() {
+    //enviando o dado do tipo string para o json do localstorage
+    localStorage.setItem('listaDeItens', JSON.stringify(listaDeItens));
+}
+
 form.addEventListener('submit',(evento) => {
     evento.preventDefault();
     salvarItem();
@@ -101,6 +106,9 @@ function mostrarItem(){
             
         })
     })
+
+    //salvando os arquivos no localstorage
+    atualizaLocalStorage();
 }
 
 function salvarEdicao(){
