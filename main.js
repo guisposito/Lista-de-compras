@@ -60,11 +60,10 @@ function mostrarItem(){
                 <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
                     <div>
                         <input type="checkbox" class="is-clickable" />
-                        <input type="text" class="is-size-5" value="${item.valor}"></input>
+                        <input type="text" class="is-size-5" value="${item.valor}" ${index !== Number(itemAEditar) ? "disabled" : ""}></input>
                     </div>  
                     <div>
-                        <button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>
-                        <i class="fa-regular is-clickable fa-pen-to-square editar"></i>
+                        ${ index === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'};
                         <i class="fa-solid fa-trash is-clickable deletar"></i>
                     </div>          
                 </li>
@@ -107,10 +106,9 @@ function mostrarItem(){
 function salvarEdicao(){
     //referenciando e pegando o valor do item que está sendo editado
     const itemEditado = document.querySelector(`[data-value="${itemAEditar}"] input[type="text"]`);
-    console.log(itemEditado.value)
     listaDeItens[itemAEditar].valor = itemEditado.value;
+    alert("O item " +  listaDeItens[itemAEditar].valor + " foi salvo com sucesso");
     //Zerando o valor do indice para nao referenciar sempre o mesmo item
     itemAEditar = -1;
     mostrarItem();
 }
-
