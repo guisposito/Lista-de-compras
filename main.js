@@ -8,12 +8,21 @@ const itensInput = document.getElementById('receber-item');
 const ulItens = document.getElementById('lista-de-itens');
 //Pegando a lista que vai mostrar os itens comprados
 const ulItensComprados = document.getElementById('itens-comprados');
-
+//Recebe informações do local Storage
+const listaRecuperada =  localStorage.getItem('listaDeItens', )
 
 function atualizaLocalStorage() {
     //enviando o dado do tipo string para o json do localstorage
     localStorage.setItem('listaDeItens', JSON.stringify(listaDeItens));
 }
+
+if(listaRecuperada) {
+    listaDeItens = JSON.parse(listaRecuperada);
+    mostrarItem();
+} else {
+    listaDeItens = [];
+}
+
 
 form.addEventListener('submit',(evento) => {
     evento.preventDefault();
