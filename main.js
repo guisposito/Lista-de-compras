@@ -77,7 +77,7 @@ function mostrarItem(){
                         <input type="text" class="is-size-5" value="${item.valor}" ${index !== Number(itemAEditar) ? "disabled" : ""}></input>
                     </div>  
                     <div>
-                        ${ index === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'};
+                        ${ index === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'}
                         <i class="fa-solid fa-trash is-clickable deletar"></i>
                     </div>          
                 </li>
