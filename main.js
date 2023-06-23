@@ -17,6 +17,7 @@ function atualizaLocalStorage() {
 }
 
 if(listaRecuperada) {
+    //Implementa a lista de json para o novo objeto
     listaDeItens = JSON.parse(listaRecuperada);
     mostrarItem();
 } else {
@@ -25,6 +26,7 @@ if(listaRecuperada) {
 
 
 form.addEventListener('submit',(evento) => {
+    //Evita o reloading da pagina
     evento.preventDefault();
     salvarItem();
     mostrarItem();
@@ -52,6 +54,7 @@ function salvarItem() {
 }
 
 function mostrarItem(){
+    //Esvaziando as listas
     ulItens.innerHTML = '';
     ulItensComprados.innerHTML = '';
 
@@ -78,7 +81,7 @@ function mostrarItem(){
                     </div>  
                     <div>
                         ${ index === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'}
-                        <i class="fa-solid fa-trash is-clickable deletar"></i>
+                        <i class="fa-solid fa-trash is-clickable deletar"></i>320
                     </div>          
                 </li>
             `
